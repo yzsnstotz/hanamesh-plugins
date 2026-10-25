@@ -1,0 +1,13 @@
+{
+  "name": "hanamesh",
+  "owner": {
+    "name": "HanaMesh"
+  },
+  "plugins": [
+    {
+      "name": "hanamesh",
+      "source": "./plugins/hanamesh",
+      "description": "Consent-gated HanaMesh usage records. Recording is off until you agree."
+    }
+  ]
+}

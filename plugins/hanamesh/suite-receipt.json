@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 1,
+  "identityKind": "composite-artifact",
+  "plugin": {
+    "name": "hanamesh",
+    "version": "0.1.2"
+  },
+  "capabilities": {
+    "readonlyTools": [
+      "hanamesh_status"
+    ]
+  },
+  "runtime": {
+    "node": ">=24.13.1 <25",
+    "bundled": false,
+    "bootstrap": {
+      "path": "bin/hm-agent",
+      "nodeVersion": "24.13.1",
+      "downloadOrigin": "https://nodejs.org",
+      "platforms": [
+        "darwin-arm64",
+        "darwin-x64"
+      ]
+    }
+  },
+  "components": {
+    "usage": {
+      "name": "hanamesh-usage",
+      "version": "0.3.0-rc.5",
+      "sourceRevision": "3a504bc40de32e30bb914d675562ac62e1dae8c5",
+      "workingTreeDirty": false,
+      "sourceFiles": [
+        {
+          "path": "src/agent/catalog.mjs",
+          "sha256": "3ff7e1e01bdc3f4377ef65c500a8199a99b132b8eeff0545ca2459db41d200f6"
+        },
+        {
+          "path": "src/agent/cli.mjs",
+          "sha256": "2e309d795a0df2fd03b6b4518fb27a6c59086e720fcbfe4444c69166b5d5c675"
+        },
+        {
+          "path": "src/agent/hook.mjs",
+          "sha256": "0e7145e35a61ea9825c05e26bda4a7b626a371a1b7ea9e2c16433e75fd0f1f54"
+        },
+        {
+          "path": "src/agent/inventory.mjs",
+          "sha256": "7abff2f141a41699bc52947720056ea288bcc095cf400358b4ee2c8ba7e5c052"
+        },
+        {
+          "path": "src/agent/notice.mjs",
+          "sha256": "ad8d4151c924aad1b60d8dea9d802d7f72d63006e3712a1b2d6fbcfad75a0368"
+        },
+        {
+          "path": "src/agent/project.mjs",
+          "sha256": "0161351e9a52425487c18512c56b5947de95dfa96ddea5897fb1a057b28550be"
+        },
+        {
+          "path": "src/agent/runtime.mjs",
+          "sha256": "a6c4490136dc58c6dc79c2c9dbec762d1d58235c8fe1f45ce89d7d841565a738"
+        },
+        {
+          "path": "src/agent/sender-lock.mjs",
+          "sha256": "34da7d29e9d706494254d5caf8ddf4ad04af4bddaebdb1895aeee49c3a6f7f3f"
+        },
+        {
+          "path": "src/agent/status.mjs",
+          "sha256": "b7ad05141770558e520625febd56c589f80ec6e5626a7429ad6a709e10bfc676"
+        },
+        {
+          "path": "src/agent/store.mjs",
+          "sha256": "19a31b6f5cddbc0912c3b659bacfb3c6ef4b043b86ca497d5b253f122b7930ce"
+        },
+        {
+          "path": "src/agent/trust.mjs",
+          "sha256": "f971635edb76a12afd30a7559c0bc56c86def11c9a73bab5a9e6f6a4acd3aa38"
+        },
+        {
+          "path": "src/agent/upload.mjs",
+          "sha256": "30165cc817495a41c4fca860c152fe1768f87ef9ef3ea1d084e54367759afca8"
+        },
+        {
+          "path": "src/agent/withdraw.mjs",
+          "sha256": "2aba1622f135087f084c65456b799c407d761e522cd9142c78b6c5cbc6dc799d"
+        },
+        {
+          "path": "agent/.claude-plugin/plugin.json",
+          "sha256": "b711a99dcc07ab7128473b5078a92d0eea1172dcac12878c1b3235490023f544"
+        },
+        {
+          "path": "agent/.codex-plugin/plugin.json",
+          "sha256": "29ad1a236e09210ea5dc0e2e65b25eb74917ef1a94fb96f93470023a2bead6fa"
+        },
+        {
+          "path": "agent/.mcp.json",
+          "sha256": "792658d41ecf4dc0f213baddc14f40b10c86e127163220d70ffff35c71575a52"
+        },
+        {
+          "path": "agent/bin/hm-agent",
+          "sha256": "c4aab75c8764837e2067b95bbb9a24b68c5fd0eee82ca025485e1eb71a0c15fe"
+        },
+        {
+          "path": "agent/hooks/hooks.json",
+          "sha256": "fecee2f63d6ab340d2e1008373d1fbcadd78aca09068e34447a296bab66d76da"
+        },
+        {
+          "path": "agent/README.md",
+          "sha256": "5d18a6e98deded55050726e659d4661aed4bcbc60f2e1c86aa25d3ef86ec4b30"
+        },
+        {
+          "path": "agent/skills/hm-setup/SKILL.md",
+          "sha256": "da3c9930323c68e0e823ba38b7f8dbf8f08fee94529c858df08edec97eba6c72"
+        },
+        {
+          "path": "package.json",
+          "sha256": "3989e72fc4b818fce21a95b8ad23168c86528fba14606b3dd5ba673c46869cd5"
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "46d8c3db4c0bfce96b0e751c63c46b95e1dde24fcc800dc5d80dd59ac109a596"
+        },
+        {
+          "path": "tools/package-agent.mjs",
+          "sha256": "0e3040715ae312325402f69fb7d644afe1dc2d95d24774fc60f48a5253b7c09f"
+        }
+      ],
+      "sourceSha256": "7ff986af32c5d637fce3b3d2ad9b1e669a4fda48c2aa8f72ec3a1b72ad855e86"
+    },
+    "core": {
+      "name": "hanamesh-core",
+      "version": "0.3.20",
+      "tarballSha256": "1a51ed245d2c9a5ad6f15ffdeea5cade03aa7139b4772576529d74fb4bc4d016"
+    }
+  },
+  "payloadSha256": "d2270d783e3d57bc31edd67431197117de976891b55ce74131ea6313d5ba186f",
+  "files": [
+    {
+      "path": ".claude-plugin/plugin.json",
+      "sha256": "b711a99dcc07ab7128473b5078a92d0eea1172dcac12878c1b3235490023f544"
+    },
+    {
+      "path": ".codex-plugin/plugin.json",
+      "sha256": "29ad1a236e09210ea5dc0e2e65b25eb74917ef1a94fb96f93470023a2bead6fa"
+    },
+    {
+      "path": ".mcp.json",
+      "sha256": "792658d41ecf4dc0f213baddc14f40b10c86e127163220d70ffff35c71575a52"
+    },
+    {
+      "path": "bin/hm-agent",
+      "sha256": "c4aab75c8764837e2067b95bbb9a24b68c5fd0eee82ca025485e1eb71a0c15fe"
+    },
+    {
+      "path": "hooks/hooks.json",
+      "sha256": "fecee2f63d6ab340d2e1008373d1fbcadd78aca09068e34447a296bab66d76da"
+    },
+    {
+      "path": "lib/agent/catalog.mjs",
+      "sha256": "3ff7e1e01bdc3f4377ef65c500a8199a99b132b8eeff0545ca2459db41d200f6"
+    },
+    {
+      "path": "lib/agent/cli.mjs",
+      "sha256": "2e309d795a0df2fd03b6b4518fb27a6c59086e720fcbfe4444c69166b5d5c675"
+    },
+    {
+      "path": "lib/agent/hook.mjs",
+      "sha256": "0e7145e35a61ea9825c05e26bda4a7b626a371a1b7ea9e2c16433e75fd0f1f54"
+    },
+    {
+      "path": "lib/agent/inventory.mjs",
+      "sha256": "7abff2f141a41699bc52947720056ea288bcc095cf400358b4ee2c8ba7e5c052"
+    },
+    {
+      "path": "lib/agent/notice.mjs",
+      "sha256": "ad8d4151c924aad1b60d8dea9d802d7f72d63006e3712a1b2d6fbcfad75a0368"
+    },
+    {
+      "path": "lib/agent/project.mjs",
+      "sha256": "0161351e9a52425487c18512c56b5947de95dfa96ddea5897fb1a057b28550be"
+    },
+    {
+      "path": "lib/agent/runtime.mjs",
+      "sha256": "a6c4490136dc58c6dc79c2c9dbec762d1d58235c8fe1f45ce89d7d841565a738"
+    },
+    {
+      "path": "lib/agent/sender-lock.mjs",
+      "sha256": "34da7d29e9d706494254d5caf8ddf4ad04af4bddaebdb1895aeee49c3a6f7f3f"
+    },
+    {
+      "path": "lib/agent/status.mjs",
+      "sha256": "b7ad05141770558e520625febd56c589f80ec6e5626a7429ad6a709e10bfc676"
+    },
+    {
+      "path": "lib/agent/store.mjs",
+      "sha256": "19a31b6f5cddbc0912c3b659bacfb3c6ef4b043b86ca497d5b253f122b7930ce"
+    },
+    {
+      "path": "lib/agent/trust.mjs",
+      "sha256": "f971635edb76a12afd30a7559c0bc56c86def11c9a73bab5a9e6f6a4acd3aa38"
+    },
+    {
+      "path": "lib/agent/upload.mjs",
+      "sha256": "30165cc817495a41c4fca860c152fe1768f87ef9ef3ea1d084e54367759afca8"
+    },
+    {
+      "path": "lib/agent/withdraw.mjs",
+      "sha256": "2aba1622f135087f084c65456b799c407d761e522cd9142c78b6c5cbc6dc799d"
+    },
+    {
+      "path": "lib/core/agent-event.d.ts",
+      "sha256": "9a40b09de38f76fe30a23e983eb4c25da6ce0bbd0cc86bff67ddee8362033505"
+    },
+    {
+      "path": "lib/core/agent-event.js",
+      "sha256": "b0978b272adf597817a5d0eff930c202dbb711693db63dec0e442ef78e4f4fb0"
+    },
+    {
+      "path": "lib/core/boundary.d.ts",
+      "sha256": "8dfd202f8aca3db4f93e0931fd73fff29fc5e35eef5c4e9fa6b9ffe0cda4cbf4"
+    },
+    {
+      "path": "lib/core/boundary.js",
+      "sha256": "aad8c707cea28f9ee0fa1ba87dd8a7e23e473835d23ed0d68ec443618d94ee0c"
+    },
+    {
+      "path": "lib/core/canonical.d.ts",
+      "sha256": "6c681a2fd375d36823cb3ec8c3ab8558e421ce2e67fffff19da525f68d99f364"
+    },
+    {
+      "path": "lib/core/canonical.js",
+      "sha256": "b12a56259a5f7a82380cdef90ba3518b912a2e6c2da1cd5c144bb10f7def91a7"
+    },
+    {
+      "path": "lib/core/event-store.d.ts",
+      "sha256": "5878d8081eb3731742e32fde061ce2a5f77250cf320e65fb28417f1496e40f88"
+    },
+    {
+      "path": "lib/core/event-store.js",
+      "sha256": "8bf5646b5ff0a35f98355c496bb9a4629c1eb5f2e23cd45fcda2bf98f505bbf3"
+    },
+    {
+      "path": "lib/core/events.d.ts",
+      "sha256": "a66d154996460ffbd5667742127e0d7c362a96fae8fcfb2f6a8903a4fdab80a8"
+    },
+    {
+      "path": "lib/core/events.js",
+      "sha256": "5db916b1eba64385ae6482db4a6bbb9343d2e2238723eba8b388ccb7a1289534"
+    },
+    {
+      "path": "lib/core/identity.d.ts",
+      "sha256": "79fd6fe31af6da06af9ffcf76189c7ba3a7f0f3fb423351cf4a6e9990cbe97a4"
+    },
+    {
+      "path": "lib/core/identity.js",
+      "sha256": "becc4c486c0a8a1c1bcf1a6b750491478c3f074c35155fb7c907473e38f2353c"
+    },
+    {
+      "path": "lib/core/index.d.ts",
+      "sha256": "b752367d329f54ade3905720e83ae084f82dad1a29c4f22573ee6931fe3e9699"
+    },
+    {
+      "path": "lib/core/index.js",
+      "sha256": "b752367d329f54ade3905720e83ae084f82dad1a29c4f22573ee6931fe3e9699"
+    },
+    {
+      "path": "lib/core/pins.d.ts",
+      "sha256": "7a39ca219acf2ff5e5088f9737a999ad60de4c012244662b9de2a759d35f51cc"
+    },
+    {
+      "path": "lib/core/pins.js",
+      "sha256": "3655387af56f188641aaf41b0fda488b5205cbecad4e4c7ac686050f0a10df4a"
+    },
+    {
+      "path": "lib/core/policy.d.ts",
+      "sha256": "45cdb47fa1828fcd5a90dc766e24f723c8fed8c115d10ef0a6ec7f392fe8a5f2"
+    },
+    {
+      "path": "lib/core/policy.js",
+      "sha256": "2f07dcdb4be1649615f85f35c2e24b09d380abf71b8f578f7aff0d9fe0462c01"
+    },
+    {
+      "path": "lib/core/privacy.d.ts",
+      "sha256": "61fa8b3e11a7a1789beb6b1dfbcb78aab083a4f8c4112d6a94c40d0e5c500710"
+    },
+    {
+      "path": "lib/core/privacy.js",
+      "sha256": "627a23aa2383a31f7f446cc11d60c58ad0eeebff8f28561a0059cc400a61f48e"
+    },
+    {
+      "path": "lib/core/project.d.ts",
+      "sha256": "c5086dac12d1f8281cc73cc24daef4c7e239f4a04089da1af6e9bee112ad2e23"
+    },
+    {
+      "path": "lib/core/project.js",
+      "sha256": "736184eda455108350dfc8e79874560f541c75b33bdb97832b9f7675ce9539c1"
+    },
+    {
+      "path": "lib/core/query.d.ts",
+      "sha256": "1e3b1f577e81a1eb5d69a68d1e6ce3cb8ce4e5b8b63182233d36ed412bc979c2"
+    },
+    {
+      "path": "lib/core/query.js",
+      "sha256": "ab49448c9bbe382f78a9a5b66959a44f5ef84d9cdddc3e8428e6baadb830efc6"
+    },
+    {
+      "path": "lib/core/store.d.ts",
+      "sha256": "a2bb3fcfcd9bd48dbc52fb6de063eea5094cc31c1395b8f8ac681897482d089e"
+    },
+    {
+      "path": "lib/core/store.js",
+      "sha256": "9287b4f70625228683bc483d62063b88f1381feca15b6b5d7b5e6f01df4a2f55"
+    },
+    {
+      "path": "lib/core/types.d.ts",
+      "sha256": "aab29a628652aa8b75b35d0dfb8c9f4e850a969d74f43654ff1b86e188a3e200"
+    },
+    {
+      "path": "lib/core/types.js",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+    },
+    {
+      "path": "lib/core/validate.d.ts",
+      "sha256": "0c5e3e26ddbe146e984b75cd5829d9b1c4c84785b1063979949c7582b47c8355"
+    },
+    {
+      "path": "lib/core/validate.js",
+      "sha256": "1d14117c80034f24158131306eb4a967870bc841a54b948bc62674fd14e03c46"
+    },
+    {
+      "path": "lib/core/view.d.ts",
+      "sha256": "75086d5f669d6dac26f93c72859771040b58a79c9b99dcb3924dc6c24f33d8ff"
+    },
+    {
+      "path": "lib/core/view.js",
+      "sha256": "14a8e517fe119ce78019f2c28ba443dfc8343c82e0edfe1fe96af1d1fa7e8f59"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "cd29e05178eecb3207c494901de7d41785a7b31216e94ab37f3e104e93f3f3b1"
+    },
+    {
+      "path": "README.md",
+      "sha256": "5d18a6e98deded55050726e659d4661aed4bcbc60f2e1c86aa25d3ef86ec4b30"
+    },
+    {
+      "path": "runtime/core/lib/agent-cli.js",
+      "sha256": "1c8c3c74d9bd0e9961d88a7ee870bb141940376300cc251aaa37ad7e0c4bc74a"
+    },
+    {
+      "path": "runtime/core/lib/agent.js",
+      "sha256": "f169f984e11c43fb6ae1855a870a6716f4727f7788fd03e788a43716d1087229"
+    },
+    {
+      "path": "runtime/core/lib/bind-link.js",
+      "sha256": "63e1612bee983e111718dea80225fd3bbfeeb322c9ffbd39ded406408e5b53d4"
+    },
+    {
+      "path": "runtime/core/lib/contracts.js",
+      "sha256": "40b20388e7b551d3916555a28590af568f3704d2f1f3cd3f59f8c517f8acf74e"
+    },
+    {
+      "path": "runtime/core/lib/device.js",
+      "sha256": "f49ef45a21e51f76a7e3883b8773faf1571ba1e7893d06fd63032d1b603b921e"
+    },
+    {
+      "path": "runtime/core/lib/errors.js",
+      "sha256": "a743eaf9417a29253ac4920db6fe41176d012a893196f34c5b8a4ed077e3f19f"
+    },
+    {
+      "path": "runtime/core/lib/registration.js",
+      "sha256": "735189eeece12d660e53d21946a197e609a13258a3bdf6802f20468dcc432d0c"
+    },
+    {
+      "path": "runtime/core/lib/shared-device.js",
+      "sha256": "7f3a82c91b49d9ec41ff713f3eb3fd334f2ba23f74ffe3a536125be2dfc55930"
+    },
+    {
+      "path": "runtime/core/lib/suite/facts.js",
+      "sha256": "b04c367ca6b26a7aff875ee3bb6b853a38223ec1222a6ebe3fd095a65d84c403"
+    },
+    {
+      "path": "runtime/core/lib/transport.js",
+      "sha256": "4b3a83896da65d14cc53ea659066aa8f3f32476e42c042b3e64cd5b866d0e579"
+    },
+    {
+      "path": "runtime/core/lib/validation.js",
+      "sha256": "51e8141e0c7b9391bac8858c2659b9322c3b499d80eee612a89d6c6c2515e0aa"
+    },
+    {
+      "path": "runtime/core/LICENSE",
+      "sha256": "cd29e05178eecb3207c494901de7d41785a7b31216e94ab37f3e104e93f3f3b1"
+    },
+    {
+      "path": "runtime/core/package.json",
+      "sha256": "1ce403211a245f677f9143d0fcac90936f0fb0eb635dd1352f0a1b1209db39fc"
+    },
+    {
+      "path": "skills/hm-setup/SKILL.md",
+      "sha256": "da3c9930323c68e0e823ba38b7f8dbf8f08fee94529c858df08edec97eba6c72"
+    }
+  ]
+}

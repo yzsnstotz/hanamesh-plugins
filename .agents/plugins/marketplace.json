@@ -1,0 +1,20 @@
+{
+  "name": "hanamesh",
+  "interface": {
+    "displayName": "HanaMesh"
+  },
+  "plugins": [
+    {
+      "name": "hanamesh",
+      "source": {
+        "source": "local",
+        "path": "./plugins/hanamesh"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
