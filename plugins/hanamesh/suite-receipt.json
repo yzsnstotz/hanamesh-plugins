@@ -3,7 +3,7 @@
   "identityKind": "composite-artifact",
   "plugin": {
     "name": "hanamesh",
-    "version": "0.1.3"
+    "version": "0.1.4"
   },
   "capabilities": {
     "readonlyTools": [
@@ -26,8 +26,8 @@
   "components": {
     "usage": {
       "name": "@hanamesh/usage",
-      "version": "0.3.0-rc.6",
-      "sourceRevision": "993a1312aababcbf97efd6c365705a1aa6217cb7",
+      "version": "0.3.0-rc.7",
+      "sourceRevision": "55bbb11b53bc436ab55fea2e59d4594d64877324",
       "workingTreeDirty": false,
       "sourceFiles": [
         {
@@ -36,7 +36,7 @@
         },
         {
           "path": "src/agent/cli.mjs",
-          "sha256": "6f7015b8d114c89841fe24d3bd5e1349a6843706ac66e0236d646a47ca43eef1"
+          "sha256": "890d9dbc0ec25a55eb1f78903dd220836caab7c5265a4be17e32fd37d87720c1"
         },
         {
           "path": "src/agent/hook.mjs",
@@ -52,7 +52,7 @@
         },
         {
           "path": "src/agent/project.mjs",
-          "sha256": "0161351e9a52425487c18512c56b5947de95dfa96ddea5897fb1a057b28550be"
+          "sha256": "0580640e31df8b2ac7435bd052afec37cef78247e36ba75867235675c8f38dd6"
         },
         {
           "path": "src/agent/runtime.mjs",
@@ -84,11 +84,11 @@
         },
         {
           "path": "agent/.claude-plugin/plugin.json",
-          "sha256": "d0841737bcc10344cdc4dc6e53966e9e4d69c9c1536fafef0314b677530e0949"
+          "sha256": "2846e5bf1b89749401fc975a06cdb0c5b3babb2bf9d032ec4f65b2e01d2559cf"
         },
         {
           "path": "agent/.codex-plugin/plugin.json",
-          "sha256": "0f4fda95cf4d9e3e87a0ffc37f1e68a0483a98d793fc025dec11e9c339232274"
+          "sha256": "f494f9eb8910a3cc810966c273b3c73f6c0012ef7992b4a4332cc025b1a41ba3"
         },
         {
           "path": "agent/.mcp.json",
@@ -112,18 +112,18 @@
         },
         {
           "path": "package.json",
-          "sha256": "2599eae7f5a78a791ce4805f77da17bc19e06d360afc9d59f3cbec0fb9c21067"
+          "sha256": "9baab8ab94be50053c3bb629c0bad044336edba0361d4d3257d55022d98cdb43"
         },
         {
           "path": "package-lock.json",
-          "sha256": "f7dd4260335a1e9181fb1d98e3f957ddbb76db16e856b9ab01c28d65ee8596f6"
+          "sha256": "1d625afd5feef2f5d136812dcc886ca1724b8def80f172d4e06d205159862fde"
         },
         {
           "path": "tools/package-agent.mjs",
           "sha256": "9eb6ba830c1d3e9ef5b0d23d6a5771baaf0d46cebaaf660c341e078e25376871"
         }
       ],
-      "sourceSha256": "db6abb13f6dfa94035850ef02019c899f3af44bf2035af06ac79118b960faf51"
+      "sourceSha256": "39b26c960a6660373fca291c79246f5afd1e2d9c5f52f31b2c847094d83c93fb"
     },
     "core": {
       "name": "@hanamesh/core",
@@ -131,15 +131,15 @@
       "tarballSha256": "4e5e3e4e2dda53ed0128d5d0295b27b4db086715beafe42e4ecb56fea4077804"
     }
   },
-  "payloadSha256": "12ec76cf1092f498fa441a8916466130268b63b1f280477da63ee77bdc0c704c",
+  "payloadSha256": "3e578a8329f21ab50b6acc3d2f575884c99165f2a75c2de4f8e635cdb60ca293",
   "files": [
     {
       "path": ".claude-plugin/plugin.json",
-      "sha256": "d0841737bcc10344cdc4dc6e53966e9e4d69c9c1536fafef0314b677530e0949"
+      "sha256": "2846e5bf1b89749401fc975a06cdb0c5b3babb2bf9d032ec4f65b2e01d2559cf"
     },
     {
       "path": ".codex-plugin/plugin.json",
-      "sha256": "0f4fda95cf4d9e3e87a0ffc37f1e68a0483a98d793fc025dec11e9c339232274"
+      "sha256": "f494f9eb8910a3cc810966c273b3c73f6c0012ef7992b4a4332cc025b1a41ba3"
     },
     {
       "path": ".mcp.json",
@@ -159,7 +159,7 @@
     },
     {
       "path": "lib/agent/cli.mjs",
-      "sha256": "6f7015b8d114c89841fe24d3bd5e1349a6843706ac66e0236d646a47ca43eef1"
+      "sha256": "890d9dbc0ec25a55eb1f78903dd220836caab7c5265a4be17e32fd37d87720c1"
     },
     {
       "path": "lib/agent/hook.mjs",
@@ -175,7 +175,7 @@
     },
     {
       "path": "lib/agent/project.mjs",
-      "sha256": "0161351e9a52425487c18512c56b5947de95dfa96ddea5897fb1a057b28550be"
+      "sha256": "0580640e31df8b2ac7435bd052afec37cef78247e36ba75867235675c8f38dd6"
     },
     {
       "path": "lib/agent/runtime.mjs",
