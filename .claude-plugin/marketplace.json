@@ -7,7 +7,7 @@
     {
       "name": "hanamesh",
       "source": "./plugins/hanamesh",
-      "description": "Consent-gated HanaMesh usage records. Recording is off until you agree."
+      "description": "Minimal local usage records start when host execution is allowed. Upload starts only after your website agreement and device binding."
     }
   ]
 }
