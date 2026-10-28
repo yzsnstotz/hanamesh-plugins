@@ -1,0 +1,8 @@
+{
+  "version": "0.2.2",
+  "sha256": "8329afb12a2c6558a790099a9ef6307f1463a203c5cbf890aab7b88a921f871b",
+  "bytes": 65118,
+  "filesIncludingReceipt": 72,
+  "materializedFileBytesAndExecutableBitsMatch": true,
+  "payloadSha256": "f5b7ce80a9195ecab37e2550ba7b46afadb84874fae2793becf433de7a607c4b"
+}
