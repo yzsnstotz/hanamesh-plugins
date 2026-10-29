@@ -1,18 +1,7 @@
-# HanaMesh plugins · Agent 0.2.2 candidate
+# HanaMesh plugins · Agent 0.2.3 unified candidate
 
-This review candidate materializes Usage 0.3.0-rc.10 and the frozen Core 0.3.25 normal artifact. It repairs an abandoned PREPARING state after validated Node publication: only a free preparation lock allows reconciliation; active preparation remains visible and hooks stay paused. Explicit local close remains closed, and calls from the preparation window are never backfilled.
+This normal materialization combines the single client Usage0.3.0-rc.11 line with frozen Core0.3.25. It retains C Agent0.2.2 runtime/onboarding behavior and remote7ec installation verification, with the exact C AOCI test repair in the source history. Website consent, local-only preparation, signed wire, native Trust, retention and withdrawal rules are unchanged. Server T3 remains the distinct @hanamesh/server-usage1.1.1 package consumed through its public API.
 
-The public main marketplace remains on its previous release. No Node archive or binary is committed here; the original recipe, official origin and startup/preparation budgets remain unchanged. Website agreement and device binding are still required before upload. Native Disable stops execution and does not prove local clearing or remote withdrawal. MCP exposes only readonly hanamesh_status; DSH keeps its existing consent flow.
+Usage source e5b348bf432a74e33437be47e33a910fb0e38b73; normal Usage SHA 205a3686b7a5c066500a197576e0c83f267197b1390863c87534464759dd1751; Core SHA 391a839eda529f443e1329335a03ca67376ba28e0b3df2b1989fd5428d23e5d5; payload SHA 8b7a97111a89d530a668fc53b590ef39001647e90d61a72bdf77d82e3890b7ce. All payload files are verified against these normal inputs; runtime/core/package.json is the existing minimal metadata projection.
 
-```text
-Claude Code: /plugin marketplace add yzsnstotz/hanamesh-plugins
-Claude Code: /plugin install hanamesh@hanamesh
-Codex: codex plugin marketplace add yzsnstotz/hanamesh-plugins
-Codex: codex plugin add hanamesh@hanamesh
-```
-
-The [suite receipt](plugins/hanamesh/suite-receipt.json) anchors 71 payload files, Usage source e0ef289d88b98e869b9d792534b299766b1fc091, normal Usage SHA 870c909508af7f3af02156e366a40b7f7962e40179db7ada637bd326776770ba, Core SHA 391a839eda529f443e1329335a03ca67376ba28e0b3df2b1989fd5428d23e5d5, and payload SHA f5b7ce80a9195ecab37e2550ba7b46afadb84874fae2793becf433de7a607c4b. Seventy files and executable modes match normal inputs; runtime/core/package.json is the validated minimal projection of Core metadata.
-
-The formal profile remains api.hanamesh.com / market.hanamesh.com. Local/staging tests use an explicit complete loopback pair. The first fresh native cold acceptance failed at official TLS connection with zero bytes; it is retained as FAIL. A later independent cold acceptance after IPv4/IPv6 connectivity verification is tracked separately in the C delivery evidence. This README does not claim that all cold starts or networks pass. Full real-model/UI, website integration, x64 execution, independent review and professional privacy-copy review remain separate gates. No npm publication, deployment or product-main merge is performed here.
-
-Upstream: [HanaMesh Usage](https://github.com/yzsnstotz/hanamesh-usage). MIT; embedded Core license retained.
+No Node binary/archive is bundled. No publication, main merge or deployment is made. Production OpenAI inputs, real models, owner Trust/OAuth, Host integration/scoring and final independent review remain separate. See plugins/hanamesh/suite-receipt.json.

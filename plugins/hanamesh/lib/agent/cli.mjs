@@ -9,6 +9,7 @@ import {uploadOnce} from './upload.mjs';
 import {senderLock} from './sender-lock.mjs';
 import {localRecordingEnabled,refreshOnboarding} from './onboarding.mjs';
 import {beginWithdrawal,finishWithdrawal,grantConsent} from './withdraw.mjs';
+import {refreshAgentCatalog} from './remote-catalog.mjs';
 
 const safeCode=error=>/^[A-Z][A-Z0-9_]{0,79}$/.test(error.message)?error.message:'AGENT_FAILED';
 let r;try{r=await runtime();}catch(error){process.stderr.write(`${safeCode(error)}\n`);process.exit(1);}
@@ -30,7 +31,13 @@ if(command==='mcp'||command==='mcp-ready') {
         allowed=true;
         await mkdir(r.agentHome,{recursive:true,mode:0o700});
         release=await senderLock(r.agentHome);
-        if(release){await r.store.prune();await refreshOnboarding(r);const result=await uploadOnce(r);r.senderError=null;await atomicJSON(join(r.agentHome,'sender.json'),{...result,checkedAt:new Date().toISOString()});}
+        if(release){
+          await r.store.prune();await refreshOnboarding(r);
+          const current=await r.call({operation:'state'});
+          // A granted sender refreshes once inside uploadOnce. Local-only collection reads public metadata here.
+          if(current.consent.state!=='granted')try{await refreshAgentCatalog(r);}catch{await atomicJSON(join(r.agentHome,'remote-proof-diagnostics.json'),{diagnostics:[{pluginId:null,code:'AGENT_CODEX_REMOTE_CATALOG_UNAVAILABLE'}]});}
+          const result=await uploadOnce(r);r.senderError=null;await atomicJSON(join(r.agentHome,'sender.json'),{...result,checkedAt:new Date().toISOString()});
+        }
       }
     }catch(error){r.senderError=safeCode(error);if(allowed)await atomicJSON(join(r.agentHome,'sender.json'),{state:'stopped',code:safeCode(error),checkedAt:new Date().toISOString()});}
     finally{if(release)await release();}
@@ -44,7 +51,7 @@ if(command==='mcp'||command==='mcp-ready') {
     if(request.id===undefined)continue;
     try {
       let result;
-      if(request.method==='initialize') {result={protocolVersion:request.params?.protocolVersion ?? '2024-11-05',capabilities:{tools:{}},serverInfo:{name:'hanamesh-usage',version:'0.3.0-rc.10'}};if(!active)active=tick();}
+      if(request.method==='initialize') {result={protocolVersion:request.params?.protocolVersion ?? '2024-11-05',capabilities:{tools:{}},serverInfo:{name:'hanamesh-usage',version:'0.3.0-rc.11'}};if(!active)active=tick();}
       else if(request.method==='ping')result={};
       else if(request.method==='tools/list')result={tools:[{name:'hanamesh_status',description:'只读检查 HanaMesh 同意、配置、计量前置条件、记录和发送原因；不修改宿主信任。',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false,openWorldHint:false}}]};
       else if(request.method==='tools/call' && request.params?.name==='hanamesh_status' && Object.keys(request.params?.arguments ?? {}).length===0)result={content:[{type:'text',text:JSON.stringify(await status(r))}]};
