@@ -1,0 +1,13 @@
+{
+  "normal": {
+    "marketHead": "475bbff60be171def5943cc4b87d25b703dd9c24",
+    "version": "0.2.4",
+    "usageSource": "9984771534b09c2c582d1d678f627f9d156a0102",
+    "payloadSha256": "053bdfc7ab70b5016543095e5d419c48c90ae608e12e14a3036c516284101ac5",
+    "archiveSha256": "5f9dbb7811cdee4542029a1f3b00de40a861dc2dd3e34f4b68379364feff8318",
+    "archiveBytes": 70703,
+    "scope": "normal candidate only; not published"
+  },
+  "scope": "normal candidate; final actual npm-installed19 and R2 pending",
+  "helperIssue": "NODE_TEST_CONTEXT inherited by nested test, first zero-exit not accepted; see docs heavy checkpoint"
+}
