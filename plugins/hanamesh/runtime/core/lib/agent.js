@@ -100,12 +100,11 @@ export async function agentCall(config, input) {
         const value = await optionalJson(consentFile);
         let result = { state: 'withheld', changedAt: null, consentId: null, authorization: null, agreedAt: null };
         if (value !== undefined) {
-            if (!value || !['granted', 'withheld'].includes(String(value.state)) || typeof value.changedAt !== 'string' || !Number.isFinite(Date.parse(value.changedAt)) || (value.consentId !== undefined && value.consentId !== null && (typeof value.consentId !== 'string' || !CONSENT_ID.test(value.consentId))))
+            if (!value || value.state !== 'withheld' || typeof value.changedAt !== 'string' || !Number.isFinite(Date.parse(value.changedAt)) || (value.consentId !== undefined && value.consentId !== null && (typeof value.consentId !== 'string' || !CONSENT_ID.test(value.consentId))))
                 fail('CORE_CONSENT_CORRUPT');
-            result = { state: value.state, changedAt: value.changedAt, consentId: value.consentId ?? null, authorization: value.state === 'granted' ? 'legacy-terminal' : null, agreedAt: null };
+            result = { state: 'withheld', changedAt: value.changedAt, consentId: value.consentId ?? null, authorization: null, agreedAt: null };
             // Explicit local close wins over any concurrent or late website response. A website grant never overwrites this file.
-            if (value.state === 'withheld')
-                return result;
+            return result;
         }
         const prepared = await readPrepared(checkOrigins);
         const grant = await optionalJson(grantFile);
@@ -143,13 +142,7 @@ export async function agentCall(config, input) {
             fail('CORE_INPUT_INVALID');
         if (input.state === 'withheld')
             return { consent: await close() };
-        if (consent.state !== 'granted')
-            fail('CORE_AGENT_WEB_CONSENT_REQUIRED');
-        if (!consent.consentId) {
-            consent = { ...consent, consentId: randomUUID() };
-            await publish(consentFile, consent);
-        }
-        return { consent };
+        fail('CORE_AGENT_WEB_CONSENT_REQUIRED');
     }
     const store = fileSharedDeviceStore(config.sharedHome);
     const existing = await store.read();
