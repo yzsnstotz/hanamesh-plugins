@@ -8,6 +8,8 @@ export interface AgentEvent {
     channel: 'claude' | 'codex';
     feature: string;
     success: boolean | null;
+    remotePluginId?: string;
+    remotePluginName?: string;
 }
 /** C-USAGE proposed hm-agent-v1; old six-field signatures remain untouched. */
 export declare function agentSigningJSON(e: AgentEvent): string;
@@ -18,6 +20,10 @@ export declare function agentEventForFact(deviceId: string, row: {
     channel: 'claude' | 'codex';
     feature: string;
     success: boolean | null;
+    remote?: {
+        remotePluginId: string;
+        name: string;
+    };
 }, consentId: string): AgentEvent;
 /** One install fact per device/Hana across Claude/Codex. Outcome and original call time are never invented. */
 export declare function agentInstallEventForFact(deviceId: string, row: {
@@ -26,4 +32,8 @@ export declare function agentInstallEventForFact(deviceId: string, row: {
     channel: 'claude' | 'codex';
     feature: string;
     success: boolean | null;
+    remote?: {
+        remotePluginId: string;
+        name: string;
+    };
 }, consentId: string): AgentEvent;

@@ -8,7 +8,7 @@ import {refreshAgentCatalog} from './remote-catalog.mjs';
 export async function uploadOnce(r,{now=Date.now(),request=(origin,path,init)=>requestJSON(origin,path,init,r.config.requestTimeoutMs)}={}) {
   let state=await r.call({operation:'state'});
   if(state.consent.state==='granted'&&state.consent.authorization==='website'){await r.call({operation:'syncOnboarding'});state=await r.call({operation:'state'});}
-  if(state.consent.state!=='granted')return {state:'withheld',code:'CONSENT_WITHHELD'};
+  if(state.consent.state!=='granted'||state.consent.authorization!=='website')return {state:'withheld',code:'CONSENT_WITHHELD'};
   if(!r.config.serverOrigin)return {state:'offline',code:'SERVER_ORIGIN_UNAVAILABLE'};
   // No downgrade: missing endpoint/protocol means stopped, never send new bytes to v1.
   const catalog=await refreshAgentCatalog(r,{now,request});
@@ -20,22 +20,8 @@ export async function uploadOnce(r,{now=Date.now(),request=(origin,path,init)=>r
   await r.call({operation:'register'});
   const device=await r.call({operation:'state'});
   const consentId=device.consent.consentId;
-  if(device.consent.state!=='granted'||consentId!==state.consent.consentId||typeof consentId!=='string'||!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(consentId))throw new Error('AGENT_CONSENT_INVALID');
-  const active=async()=>{const current=await r.call({operation:'state'});if(current.consent.state!=='granted'||current.consent.consentId!==consentId||current.deviceId!==device.deviceId)throw new Error('AGENT_CONSENT_CHANGED');};
-  // Only pre-existing terminal grants use the legacy activation endpoint. A website generation is already audited.
-  let bound=true;
-  if(device.consent.authorization!=='website'){
-    const consentPath=`/v2/usage/me/devices/${encodeURIComponent(device.deviceId)}/consents/${consentId}`,activationBody='{}';
-    const activationHeaders=await r.call({operation:'signRequest',method:'POST',path:consentPath,body:activationBody});
-    const activation=await request(r.config.serverOrigin,consentPath,{method:'POST',headers:{...activationHeaders,origin:r.config.serverOrigin,'content-type':'application/json'},body:activationBody});
-    if(!activation||Object.keys(activation).sort().join('|')!=='barrier|consentId|state'||activation.consentId!==consentId||activation.state!=='active'||activation.barrier!=='committed')throw Error('AGENT_ACTIVATION_UNCONFIRMED');
-    await active();
-    const from=new Date(now-86400000).toISOString(),to=new Date(now).toISOString();
-    const path=`/v1/usage/me/contributions?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`;
-    const readHeaders=await r.call({operation:'signRequest',method:'GET',path,body:null});
-    const contributions=await request(r.config.serverOrigin,path,{headers:readHeaders});
-    if(typeof contributions.bound!=='boolean')throw Error('AGENT_BINDING_UNAVAILABLE');bound=contributions.bound;
-  }
+  if(device.consent.state!=='granted'||device.consent.authorization!=='website'||consentId!==state.consent.consentId||typeof consentId!=='string'||!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(consentId))throw new Error('AGENT_CONSENT_INVALID');
+  const active=async()=>{const current=await r.call({operation:'state'});if(current.consent.state!=='granted'||current.consent.authorization!=='website'||current.consent.consentId!==consentId||current.deviceId!==device.deviceId)throw new Error('AGENT_CONSENT_CHANGED');};
   const send=async(wire,mark,key)=>{
     const body=JSON.stringify([wire]),path='/v2/usage/events';
     const headers=await r.call({operation:'signRequest',method:'POST',path,body});await active();
@@ -56,7 +42,7 @@ export async function uploadOnce(r,{now=Date.now(),request=(origin,path,init)=>r
     if(wire && (wire.deviceId!==device.deviceId||wire.hanaRef!==row.hanaRef||!wire.nonce.startsWith(`g${consentId}.`)))throw new Error('AGENT_ATTRIBUTION_CHANGED');
     if(!wire) {
       const event=agentEventForFact(device.deviceId,{...entry,hanaRef:row.hanaRef},consentId);
-      const {signature}=await r.call({operation:'sign',bytes:Buffer.from(agentSigningJSON(event)).toString('base64')});
+      const {signature}=await r.call({operation:'sign',message:agentSigningJSON(event)});
       wire={...event,signature};
       wire=await r.store.freezeWire(row.factId,wire);
     }
@@ -69,8 +55,8 @@ export async function uploadOnce(r,{now=Date.now(),request=(origin,path,init)=>r
     const event=agentInstallEventForFact(device.deviceId,row,consentId),existing=await r.store.installState(event.eventId);
     if(existing?.delivery)continue; // No automatic replay after an unknown commit or a terminal decision.
     let wire=existing?.wire;
-    if(!wire){const {signature}=await r.call({operation:'sign',bytes:Buffer.from(agentSigningJSON(event)).toString('base64')});wire=await r.store.freezeInstall(row.factId,{...event,signature});}
+    if(!wire){const {signature}=await r.call({operation:'sign',message:agentSigningJSON(event)});wire=await r.store.freezeInstall(row.factId,{...event,signature});}
     if(wire)await send(wire,delivery=>r.store.markInstall(wire.eventId,delivery),wire.eventId);
   }
-  return {state:'idle',code:null,bound,websiteOrigin:r.config.websiteOrigin,settings:catalog.settings};
+  return {state:'idle',code:null,bound:true,websiteOrigin:r.config.websiteOrigin,settings:catalog.settings};
 }

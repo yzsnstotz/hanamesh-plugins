@@ -1,7 +1,7 @@
-# HanaMesh plugins · Agent 0.2.5 unified candidate
+# HanaMesh plugins · Agent 0.2.6 cleanup candidate
 
-This normal materialization combines the single client Usage0.3.0-rc.13 line with frozen Core0.3.25. It retains C Agent0.2.2 runtime/onboarding behavior and remote7ec installation verification, with the exact C AOCI test repair in the source history. Website consent, local-only preparation, signed wire, native Trust, retention and withdrawal rules are unchanged. The independently verified @hanamesh/server-usage1.1.2 provider remains outside this client payload.
+This candidate combines normal Usage 0.3.0-rc.14 with normal Core 0.3.25. Official Codex remote plugins use their native remote_plugin_id across versions, including connectors. Plugin calls during runtime preparation retain minimal local metadata and are processed when ready; upload requires website consent and device binding.
 
-Usage source bc659269bdd406e7b59b0a90ba56d616c348e16c; normal Usage SHA ef0781a373f8cac4aca7ca9c55582c55332733858a77cbfd7575971544a60353; Core SHA 391a839eda529f443e1329335a03ca67376ba28e0b3df2b1989fd5428d23e5d5; payload SHA c9aded93d6a1927f95dcbc67fcafe0ad3e985bd17935c2a9f6b08426ed187405. All payload files are verified against these normal inputs; runtime/core/package.json is the existing minimal metadata projection.
+Usage source db2eb6af93a129327622eabc9c25e962241310ac; normal Usage SHA256 4d519791fa517f39c7f4efa2cffd603e17124011083b3a3bd533660624db5517; Core SHA256 6de09a6c65bc894ecb4a89482b8ca6fa184274ef9b98f5d57fe7817c56e2db12; payload SHA256 5a14b82091499e9f48b1df677725c96fabb112479e7013612069c7ef6de9dd9a. Payload bytes and execute modes match these normal inputs; runtime/core/package.json is the minimal metadata projection.
 
-No Node binary/archive is bundled. No publication, main merge or deployment is made. Production OpenAI inputs, real models, owner Trust/OAuth, Host integration/scoring and final independent review remain separate. See plugins/hanamesh/suite-receipt.json.
+Author candidate, pending independent R2 review. No publication, main merge, deployment or Host switch. No Node binary/archive is bundled. See plugins/hanamesh/suite-receipt.json.
