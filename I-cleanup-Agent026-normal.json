@@ -1,0 +1,9 @@
+{
+  "buildHead": "29ccc2c386c8bd2c7ebcfab056a235deb1f1e4a9",
+  "version": "0.2.6",
+  "normalSha256": "d1b5fbddcad4ad299f85d5c118b09767b4d653365197170e97dd55c3a0e0341e",
+  "bytes": 65863,
+  "payloadSha256": "decf10eb52f8da50a6ea16a3bee8f9cefd53011bf8320c11d38cc54ca8f917fe",
+  "evidence": "https://github.com/yzsnstotz/hanamesh-docs/blob/main/\u8bc1\u636e/I-CleanupFinish-20261030/repair-04/market026-proof.json",
+  "normalArtifact": "\u8bc1\u636e/I-CleanupFinish-20261030/repair-04/packages/hanamesh-agent-0.2.6.tgz"
+}
