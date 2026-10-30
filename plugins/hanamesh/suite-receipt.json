@@ -49,7 +49,7 @@
     "usage": {
       "name": "@hanamesh/usage",
       "version": "0.3.0-rc.14",
-      "sourceRevision": "db2eb6af93a129327622eabc9c25e962241310ac",
+      "sourceRevision": "a70e65885190fcc927cf1e94d9188fd26baed50f",
       "workingTreeDirty": false,
       "sourceFiles": [
         {
@@ -122,7 +122,7 @@
         },
         {
           "path": "src/agent/upload.mjs",
-          "sha256": "e672702c2695ccbc11304c004d1c2519318d5bcf09e57a4c357e835a98ae94ea"
+          "sha256": "7a3852fa7700db3652f98a2c3ecafaf1075b1059741d0002627ef7c0c7dbff12"
         },
         {
           "path": "src/agent/withdraw.mjs",
@@ -185,7 +185,7 @@
           "sha256": "0f5deebb0bae2d456ed3181e183639f5a087c436f6d3b869b087933343fc4cfb"
         }
       ],
-      "sourceSha256": "93a59c849452f285f774068698096e944d6802d1ea12bd3348697852e16cd51b"
+      "sourceSha256": "d8d71a649fb6696b083acde5316fe5349349061ac89c59d3c6062aed4e71aa3e"
     },
     "core": {
       "name": "@hanamesh/core",
@@ -194,7 +194,7 @@
       "tarballSha256": "6de09a6c65bc894ecb4a89482b8ca6fa184274ef9b98f5d57fe7817c56e2db12"
     }
   },
-  "payloadSha256": "5a14b82091499e9f48b1df677725c96fabb112479e7013612069c7ef6de9dd9a",
+  "payloadSha256": "decf10eb52f8da50a6ea16a3bee8f9cefd53011bf8320c11d38cc54ca8f917fe",
   "files": [
     {
       "path": ".claude-plugin/plugin.json",
@@ -294,7 +294,7 @@
     },
     {
       "path": "lib/agent/upload.mjs",
-      "sha256": "e672702c2695ccbc11304c004d1c2519318d5bcf09e57a4c357e835a98ae94ea"
+      "sha256": "7a3852fa7700db3652f98a2c3ecafaf1075b1059741d0002627ef7c0c7dbff12"
     },
     {
       "path": "lib/agent/withdraw.mjs",
