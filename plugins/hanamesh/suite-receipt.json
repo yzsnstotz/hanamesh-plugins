@@ -3,7 +3,7 @@
   "identityKind": "composite-artifact",
   "plugin": {
     "name": "hanamesh",
-    "version": "0.2.7"
+    "version": "0.2.8"
   },
   "capabilities": {
     "readonlyTools": [
@@ -49,7 +49,7 @@
     "usage": {
       "name": "@hanamesh/usage",
       "version": "0.3.0-rc.15",
-      "sourceRevision": "533c41ad403283cf9d464b545c2f852657dba568",
+      "sourceRevision": "bf9e8fa1531664b46396f92616a09eb1e44594a1",
       "workingTreeDirty": false,
       "sourceFiles": [
         {
@@ -130,11 +130,11 @@
         },
         {
           "path": "agent/.claude-plugin/plugin.json",
-          "sha256": "08be041897d6ca33cf9e692ff2c62033b1a7f11156349f37e00ceeae54ded7b5"
+          "sha256": "9b0dcf4d94c1c1418e078843007aee1be276f1d8fafc7dd7c996c2ab167c3058"
         },
         {
           "path": "agent/.codex-plugin/plugin.json",
-          "sha256": "1b95c6d41026b79e32cb3db1d5ea75ca519abc6e2fb112db0db86bbb33d178c7"
+          "sha256": "a2d963b0157ade8c9d405b36d9749d3268841ea2f4eafd9174f20ba1550b9863"
         },
         {
           "path": "agent/.mcp.json",
@@ -158,7 +158,7 @@
         },
         {
           "path": "agent/README.md",
-          "sha256": "f2aa6d803d28eda0be4055e7540103b466a446539919e086d09b938e02aa405b"
+          "sha256": "66cddcf7dca1af297d1e3934b843e3edfe670b445e9ea819b53208cfa3ee6c39"
         },
         {
           "path": "agent/skills/hm-setup/SKILL.md",
@@ -174,7 +174,7 @@
         },
         {
           "path": "tools/package-agent.mjs",
-          "sha256": "ed062c7e689903a0ccbe5fb3b0b22bae0144d2709ef4ce3f28153f6b252d4ce7"
+          "sha256": "e9a2e008c6c234879560f4a7988f5b9a9f77016002dd2edb812cee0a44dd2f97"
         },
         {
           "path": "src/core/agent-event.ts",
@@ -185,24 +185,24 @@
           "sha256": "0f5deebb0bae2d456ed3181e183639f5a087c436f6d3b869b087933343fc4cfb"
         }
       ],
-      "sourceSha256": "2ed24fbbc1c16a9ab596e4a42ee32ad6c56732150ef03b05a0346350f6908779"
+      "sourceSha256": "777f9affb17e7c5c8fef494a232ff35101b4a8616212eef18d54c23aa05fd3f9"
     },
     "core": {
       "name": "@hanamesh/core",
-      "version": "0.3.27",
+      "version": "0.3.28",
       "agentProtocolVersion": 2,
-      "tarballSha256": "2bc0c168eb1fead7e1c8137acf010583e7c830fd3da69742bd37e8190cabd116"
+      "tarballSha256": "9ef8c250efa3bc46de583dc82103719d71d9f3dcc2233fd49731b4467337efa9"
     }
   },
-  "payloadSha256": "1260757d3c4fe72319c0139784676004195cbf1a5f4c621b36798c06858ddff5",
+  "payloadSha256": "8efedf64023cbce9bcf5e8523959a80e3f82018c76620b41669a5cbd1e1342c1",
   "files": [
     {
       "path": ".claude-plugin/plugin.json",
-      "sha256": "08be041897d6ca33cf9e692ff2c62033b1a7f11156349f37e00ceeae54ded7b5"
+      "sha256": "9b0dcf4d94c1c1418e078843007aee1be276f1d8fafc7dd7c996c2ab167c3058"
     },
     {
       "path": ".codex-plugin/plugin.json",
-      "sha256": "1b95c6d41026b79e32cb3db1d5ea75ca519abc6e2fb112db0db86bbb33d178c7"
+      "sha256": "a2d963b0157ade8c9d405b36d9749d3268841ea2f4eafd9174f20ba1550b9863"
     },
     {
       "path": ".mcp.json",
@@ -230,7 +230,7 @@
     },
     {
       "path": "lib/agent/cli.mjs",
-      "sha256": "c18f3661ce53e54641462562f2e6489dc16e77140fba88a9f08a568aaf47b678"
+      "sha256": "86c1de1281c6bf4fc8935eed02b0abe5d4bfb4ad80c0a444893528846dfbdc65"
     },
     {
       "path": "lib/agent/codex-remote.mjs",
@@ -434,7 +434,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "f2aa6d803d28eda0be4055e7540103b466a446539919e086d09b938e02aa405b"
+      "sha256": "66cddcf7dca1af297d1e3934b843e3edfe670b445e9ea819b53208cfa3ee6c39"
     },
     {
       "path": "runtime/core/lib/agent-cli.js",
@@ -486,7 +486,7 @@
     },
     {
       "path": "runtime/core/package.json",
-      "sha256": "fb9aa2ffc15a9c32bed684630a766bc30d1d10b3c7f6bc2176a1c2c5aaf490f5"
+      "sha256": "38386e6fc87a3900743c1c979d11ef495a6ce9ae04045321ff7250de89da2b14"
     },
     {
       "path": "skills/hm-setup/SKILL.md",

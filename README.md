@@ -1,5 +1,7 @@
-# HanaMesh Agent 0.2.7 · R2 compatibility removal
+# HanaMesh Agent 0.2.8
 
-Normal Usage rc.15 and Core 0.3.27. Removed terminal grant compatibility and obsolete nested server catalog DTO fallback. Website authorization, local withdrawal and current remote ID metadata remain.
+Materialized by the existing Usage package-agent script from Core 0.3.28 and Usage main 6923b52 plus only the five approved materialization metadata changes. Usage product source and behavior are unchanged.
 
-Payload SHA256 1260757d3c4fe72319c0139784676004195cbf1a5f4c621b36798c06858ddff5. See plugins/hanamesh/suite-receipt.json. Author candidate pending R2; no publication or main merge.
+Usage metadata source bf9e8fa1531664b46396f92616a09eb1e44594a1; Core normal SHA256 9ef8c250efa3bc46de583dc82103719d71d9f3dcc2233fd49731b4467337efa9; payload SHA256 8efedf64023cbce9bcf5e8523959a80e3f82018c76620b41669a5cbd1e1342c1. See plugins/hanamesh/suite-receipt.json for exact source and payload inventory.
+
+Candidate pending independent R2 review; no publication or main merge.
